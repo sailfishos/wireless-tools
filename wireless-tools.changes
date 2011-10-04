@@ -1,0 +1,56 @@
+* Thu May 7 2009 Arjan van de Ven <arjan@linux.intel.com> 29
+- make it work with LD_AS_NEEDED
+
+* Tue Dec 09 2008 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 29
+- Merge -doc back to main package
+
+* Fri Dec 05 2008 Arjan van de Ven <arjan@linux.intel.com> 29
+- Split off a -doc packge
+
+* Mon Aug 18 2008 Vivian Zhang <vivian.zhang@intel.com>
+- Updated branding info
+
+* Mon Feb 18 2008 Christopher Aillon <caillon@redhat.com> - 1:29-2
+- Rebuild to celebrate my birthday (and GCC 4.3)
+
+* Sat Dec 22 2007 Christopher Aillon <caillon@redhat.com> - 1:29-1
+- Update to v29 stable release
+- Some minor cleanups for merge review
+
+* Fri Aug 24 2007 Christopher Aillon <caillon@redhat.com> - 1:29-0.2.pre22
+- Rebuild
+
+* Mon Aug 13 2007 Christopher Aillon <caillon@redhat.com> - 1:29-0.1.pre22
+- Update to 29pre22
+- Update the license tag
+
+* Tue May 22 2007 Christopher Aillon <caillon@redhat.com> - 1:29-0.1.pre21
+- Update to 29pre21
+
+* Mon May 14 2007 Christopher Aillon <caillon@redhat.com> - 1:28-3
+- Only the sscanf fixes this time.
+
+* Mon Apr 30 2007 Christopher Aillon <caillon@redhat.com> - 1:28-2
+- Backport a few 64bit alignment fixes from the latest betas.
+
+* Tue Aug 29 2006 Christopher Aillon <caillon@redhat.com> - 1:28-1
+- Update to the latest stable release
+- Create -devel subpackage for headers
+
+* Wed Jul 12 2006 Jesse Keating <jkeating@redhat.com> - 1:28-0.pre16.1.6.1
+- rebuild
+
+* Thu Apr  6 2006 Dan Williams <dcbw@redhat.com> - 1:28-0.pre16.1
+- Update to 28 pre16
+- Rebuild for WE-20
+
+* Sun Feb 12 2006 Christopher Aillon <caillon@redhat.com> - 1:28-0.pre13.5.1
+- Update to 28 pre13
+
+* Tue Feb 07 2006 Jesse Keating <jkeating@redhat.com> - 1:28-0.pre10.5.2
+- rebuilt for new gcc4.1 snapshot and glibc changes
+
+* Fri Dec 09 2005 Jesse Keating <jkeating@redhat.com>
+- rebuilt
+
+
