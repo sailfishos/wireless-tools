@@ -1,5 +1,3 @@
-#specfile originally created for Fedora, modified for Moblin Linux
-
 Summary: Wireless ethernet configuration tools
 Group: System/Base
 License: GPL+
@@ -10,7 +8,6 @@ URL: http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html
 Source: http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/wireless_tools.%{version}.tar.gz
 Patch1: wireless-tools-29-makefile.patch
 Patch2: buildfix.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 This package contain the Wireless tools, used to manipulate
@@ -27,7 +24,6 @@ Requires: wireless-tools = %{version}-%{release}
 Development headers for the wireless-tools package.
 
 %prep
-
 %setup -q -n wireless_tools.%{version}
 %patch1 -p1 -b .makefile
 %patch2 -p1 -b .buildfix
@@ -37,18 +33,13 @@ make clean
 make OPT_FLAGS="$RPM_OPT_FLAGS" BUILD_SHARED=1 FORCE_WEXT_VERSION=16
 
 %install
-%{__mkdir_p} $RPM_BUILD_ROOT{/sbin,/%{_lib},%{_mandir}/man8,%{_includedir},%{_libdir}}
+%{__mkdir_p} $RPM_BUILD_ROOT{/sbin,%{_mandir}/man8,%{_includedir},%{_libdir}}
 
 make install INSTALL_DIR=$RPM_BUILD_ROOT/sbin \
-	INSTALL_LIB=$RPM_BUILD_ROOT/%{_lib} \
+	INSTALL_LIB=$RPM_BUILD_ROOT%{_libdir} \
 	INSTALL_INC=$RPM_BUILD_ROOT%{_includedir} \
 	INSTALL_MAN=$RPM_BUILD_ROOT%{_mandir} \
 	%{?_smp_mflags}
-%{__rm} -f $RPM_BUILD_ROOT/%{_lib}/libiw.{a,so}
-ln -sf ../../%{_lib}/libiw.so.%{version} \
-       $RPM_BUILD_ROOT%{_libdir}/libiw.so
-
-%clean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -56,12 +47,12 @@ ln -sf ../../%{_lib}/libiw.so.%{version} \
 %files
 %defattr(-,root,root,-)
 /sbin/*
-/%{_lib}/*.so.*
-%doc INSTALL README DISTRIBUTIONS.txt
+%{_libdir}/*.so.*
+%doc README DISTRIBUTIONS.txt
 %doc %{_mandir}/man*/*
 
 %files devel
 %defattr(-,root,root,-)
-%{_includedir}/*
+%{_includedir}/*.h
 %{_libdir}/*.so
 

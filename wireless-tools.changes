@@ -1,3 +1,6 @@
+* Sat Oct 06 2012 Marko Saukko <marko.saukko@jollamobile.com> - 29
+- Contributing to MER#174 by moving libs to /usr/lib
+
 * Thu May 7 2009 Arjan van de Ven <arjan@linux.intel.com> 29
 - make it work with LD_AS_NEEDED
 
